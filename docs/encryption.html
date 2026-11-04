@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — Transmitter</title>
+<meta name="description" content="How Transmitter encrypts sound, picture, timecode and control messages: AES-256-GCM, X25519 key exchange and PBKDF2 passwords.">
+<meta property="og:title" content="Transmitter — from Parabolic">
+<meta property="og:description" content="Stream multichannel audio and picture with timecode between Pro Tools rooms, wherever they are.">
+<meta name="theme-color" content="#14161a">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/transmitter.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+</head>
+<body>
+<header class="tx-head"><div class="tx-wrap">
+  <a href="index.html" class="tx-logo-link"><img class="tx-mark" src="assets/transmitter-logo.webp" alt="Transmitter" width="1376" height="281"></a>
+  <div class="from"><span>from</span><a href="https://lewsapps.com"><b>Parabolic</b></a></div>
+</div></header>
+
+<nav class="tx-nav">
+  <a class="btn sm" href="index.html">Home / Download</a>
+  <a class="btn sm" href="encryption.html">Encryption</a>
+  <a class="btn sm" href="mailto:lew@parabolicny.com">Contact</a>
+  <a class="btn sm" href="https://lewsapps.com">Lewsapps.com</a>
+</nav>
+
+<main class="tx-wrap">
+  <h2 class="tx-section">Security</h2>
+  <div class="card tx-page">
+    <p class="lead">Everything Transmitter sends — the sound, the picture, timecode and every control message — is encrypted from Transmitter to each viewer.</p>
+
+    <section class="card tx-box">
+      <h4>AES-256-GCM</h4>
+      <p><b>AES (Advanced Encryption Standard)</b> is the encryption itself. It's the US government standard, used by banks, HTTPS websites, iMessage, FaceTime and Apple's FileVault disk encryption. Transmitter uses it with a 256-bit key, the strongest standard size.</p>
+      <p><b>GCM (Galois/Counter Mode)</b> is how AES is applied to each packet. As well as scrambling the packet, it adds a seal (the "tag"). Any packet that's altered or faked on the way is detected and thrown away, so the sound and picture can't be tampered with.</p>
+    </section>
+
+    <section class="card tx-box">
+      <h4>Keys and password</h4>
+      <p><b>X25519</b> is how the two ends agree a fresh 256-bit key each time they connect, without the key ever crossing the network. FaceTime, Signal and TLS 1.3 use the same key exchange.</p>
+      <p>Your password is turned into key material with <b>PBKDF2 (50,000 rounds)</b> and mixed into that key, so without the password the stream can't be unlocked.</p>
+      <p><b>Connecting by code:</b> the two ends find each other through Transmitter's own server, swapping their addresses encrypted with the code and password. The server can't read them, and the sound and picture never pass through it. They go directly from the studio to the viewer.</p>
+    </section>
+
+    <section class="card tx-box">
+      <h4>Hardware acceleration</h4>
+      <p>All of it comes from Apple's own encryption libraries (<b>CryptoKit</b> and <b>CommonCrypto</b>), which use the hardware encryption built into Macs, iPads and Apple TVs. That's why it adds no noticeable delay.</p>
+    </section>
+
+    <a class="btn primary tx-back" href="index.html#apps">The apps</a>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap tx-foot">
+  <span>© 2026 Parabolic · New York</span>
+  <nav><a href="https://lewsapps.com">Lewsapps.com</a><a href="mailto:lew@parabolicny.com">Contact</a></nav>
+</div></footer>
+</body>
+</html>

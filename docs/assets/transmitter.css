@@ -20,3 +20,15 @@
 
 .tx-foot { max-width: 1120px; }
 @media (max-width: 760px) { .tx-grid { grid-template-columns: 1fr; } .from b { font-size: 17px; } }
+
+/* text pages */
+.tx-page { padding: 22px 24px 26px; }
+.tx-page > * { max-width: 760px; margin-left: auto; margin-right: auto; }
+.tx-page .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin-top: 0; margin-bottom: 22px; }
+.tx-box { padding: 16px 18px; margin-bottom: 16px; border-color: color-mix(in srgb, var(--purple) 55%, transparent); }
+.tx-box h4 { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--subtle); }
+.tx-box p { margin: 0 0 9px; font-size: 13.5px; line-height: 1.6; color: var(--subtle); }
+.tx-box p:last-child { margin-bottom: 0; }
+.tx-box b { color: var(--text); }
+.tx-back { display: inline-flex; margin-top: 6px; }
+.tx-page > .tx-back { margin-left: max(0px, calc((100% - 760px) / 2)); }
