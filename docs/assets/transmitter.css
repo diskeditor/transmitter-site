@@ -37,3 +37,15 @@
 .from img.parabolic { width: 150px; height: auto; display: block; margin-top: 4px; }
 footer.site .foot-p { display: inline-flex; align-items: center; gap: 12px; }
 footer.site .foot-p img.parabolic { width: 104px; height: auto; display: block; }
+
+/* smaller app cards, centred rows */
+.tx-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.tx-grid .tx-card { flex: 0 1 200px; padding: 14px 14px 13px; gap: 7px; }
+.tx-card h3 { font-size: 16px; }
+.tx-card .plat { font-size: 10px; }
+.tx-card p { font-size: 12.5px; line-height: 1.45; }
+.tx-card .req { font-size: 11px; }
+.tx-card .btn.primary { height: 38px; font-size: 13.5px; }
+.tx-section { text-align: center; }
+@media (max-width: 600px) { .tx-grid .tx-card { flex-basis: 100%; } }
+.tx-card .btn.primary { white-space: nowrap; }
