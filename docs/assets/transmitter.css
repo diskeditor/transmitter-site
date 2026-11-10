@@ -49,3 +49,6 @@ footer.site .foot-p img.parabolic { width: 104px; height: auto; display: block; 
 .tx-section { text-align: center; }
 @media (max-width: 600px) { .tx-grid .tx-card { flex-basis: 100%; } }
 .tx-card .btn.primary { white-space: nowrap; }
+.tx-grid { flex-wrap: nowrap; } .tx-grid .tx-card { flex: 1 1 0; min-width: 0; max-width: 220px; }
+@media (max-width: 860px) { .tx-grid { flex-wrap: wrap; } .tx-grid .tx-card { flex: 0 1 240px; max-width: none; } }
+@media (max-width: 600px) { .tx-grid .tx-card { flex-basis: 100%; } }
