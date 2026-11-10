@@ -52,3 +52,8 @@ footer.site .foot-p img.parabolic { width: 104px; height: auto; display: block; 
 .tx-grid { flex-wrap: nowrap; } .tx-grid .tx-card { flex: 1 1 0; min-width: 0; max-width: 220px; }
 @media (max-width: 860px) { .tx-grid { flex-wrap: wrap; } .tx-grid .tx-card { flex: 0 1 240px; max-width: none; } }
 @media (max-width: 600px) { .tx-grid .tx-card { flex-basis: 100%; } }
+/* download all */
+.tx-all { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 18px 0 4px; }
+.tx-all .btn.primary { height: 44px; padding: 0 26px; font-size: 15px; cursor: pointer; border: 0; }
+.tx-all .btn.primary:disabled { opacity: .6; cursor: default; }
+.tx-all-note { font-size: 12px; color: var(--muted); }
